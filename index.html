@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Документация</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Документация</h1>
+  <p>Пример текста с кнопкой копирования:</p>
+  <pre id="example-code">Это пример текста для копирования.</pre>
+  <button onclick="copyToClipboard('example-code')">Копировать</button>
+
+  <script>
+    function copyToClipboard(elementId) {
+      const text = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Скопировано: " + text);
+      }).catch(err => {
+        console.error("Ошибка копирования: ", err);
+      });
+    }
+  </script>
+</body>
+</html>
