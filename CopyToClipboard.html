@@ -1,0 +1,13 @@
+<p>Click the button below to copy the installation command:</p>
+<pre id="install-command">npm install x-ui-proxy</pre>
+<button onclick="copyToClipboard(document.getElementById('install-command').innerText)">Copy Command</button>
+
+<script>
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    alert("Copied to clipboard: " + text);
+  }).catch(err => {
+    console.error("Failed to copy text: ", err);
+  });
+}
+</script>
